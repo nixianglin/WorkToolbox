@@ -1,0 +1,57 @@
+﻿<Window x:Class="WorkToolbox.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        xmlns:local="clr-namespace:WorkToolbox"
+        Title="智能工作助手" Height="700" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource RegionBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Border Background="{DynamicResource SecondaryRegionBrush}" Padding="10,5,10,0" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1">
+            <TabControl x:Name="MainTab" 
+                        Style="{StaticResource TabControlCapsule}"
+                        BorderThickness="0">
+
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="网络配置" VerticalAlignment="Center" Margin="5,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <local:NetworkSettingView />
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="连接监控" VerticalAlignment="Center" Margin="5,0"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <local:TcpMonitorView />
+                </TabItem>
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock Text="文件工具" VerticalAlignment="Center" Margin="5,0"/>
+                    </TabItem.Header>
+                    <Grid Background="White" Margin="20">
+                        <hc:Empty Description="开发中..." />
+                    </Grid>
+                </TabItem>
+
+                <TabItem>
+                    <TabItem.Header>
+                        <TextBlock Text="系统清理" VerticalAlignment="Center" Margin="5,0"/>
+                    </TabItem.Header>
+                    <Grid Background="White" Margin="20">
+                        <hc:Empty Description="敬请期待" />
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Border>
+    </Grid>
+</Window>
